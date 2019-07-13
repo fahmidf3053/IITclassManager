@@ -1,0 +1,52 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        applicationId "com.microsoft.projectoxford.faceapisample"
+        minSdkVersion 22
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.annotation:annotation:1.0.2'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    // Include local lib mostly for debug purpose.
+    // implementation project(':lib')
+
+    // Use the following line to include client library for Face API from Maven Central Repository
+    implementation 'com.google.firebase:firebase-ml-vision:21.0.0'
+    implementation 'com.google.firebase:firebase-ml-vision-image-label-model:18.0.0'
+    implementation 'com.google.firebase:firebase-ml-model-interpreter:20.0.0'
+    implementation 'com.microsoft.projectoxford:face:1.4.4'
+    implementation 'com.google.code.gson:gson:2.8.5'
+
+
+    implementation 'com.sothree.slidinguppanel:library:3.4.0'
+    implementation 'com.lucasurbas:listitemview:1.1.1'
+    implementation 'org.jetbrains:annotations:15.0'
+    implementation 'com.robertlevonyan.view:CustomFloatingActionButton:2.1.1'
+
+}
+apply plugin: 'com.google.gms.google-services'
