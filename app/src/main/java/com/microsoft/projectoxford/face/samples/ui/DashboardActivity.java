@@ -4,16 +4,37 @@ import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.microsoft.projectoxford.face.samples.LivePreviewActivity;
 import com.microsoft.projectoxford.face.samples.R;
 
 public class DashboardActivity extends AppCompatActivity {
+
+    String  name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        FirebaseFirestore.getInstance()
+                .collection("Teachers")
+                .document(FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber().substring(3))
+                .get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        name  = (String) documentSnapshot.get("Name");
+                        Toast.makeText(DashboardActivity.this, "Welcome: "+name, Toast.LENGTH_SHORT).show();
+                    }
+                });
+
 
         if (getString(R.string.subscription_key).startsWith("Please")) {
             new AlertDialog.Builder(this)
