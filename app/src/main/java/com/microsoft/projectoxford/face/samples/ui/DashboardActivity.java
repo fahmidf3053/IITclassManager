@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.microsoft.projectoxford.face.samples.LivePreviewActivity;
 import com.microsoft.projectoxford.face.samples.R;
 
-public class MainActivity extends AppCompatActivity {
+public class DashboardActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

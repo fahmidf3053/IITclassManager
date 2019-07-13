@@ -184,7 +184,7 @@ public class IdentificationActivity extends AppCompatActivity {
     }
 
     void setPersonGroupSelected(int position) {
-        TextView textView = (TextView) findViewById(R.id.text_person_group_selected);
+//        TextView textView = (TextView) findViewById(R.id.text_person_group_selected);
         if (position > 0) {
             String personGroupIdSelected = mPersonGroupListAdapter.personGroupIdList.get(position);
             mPersonGroupListAdapter.personGroupIdList.set(
@@ -195,15 +195,15 @@ public class IdentificationActivity extends AppCompatActivity {
             setPersonGroupSelected(0);
         } else if (position < 0) {
             setIdentifyButtonEnabledStatus(false);
-            textView.setTextColor(Color.RED);
-            textView.setText(R.string.no_person_group_selected_for_identification_warning);
+//            textView.setTextColor(Color.RED);
+//            textView.setText(R.string.no_person_group_selected_for_identification_warning);
         } else {
             mPersonGroupId = mPersonGroupListAdapter.personGroupIdList.get(0);
             String personGroupName = StorageHelper.getPersonGroupName(
                     mPersonGroupId, IdentificationActivity.this);
             refreshIdentifyButtonEnabledStatus();
-            textView.setTextColor(Color.BLACK);
-            textView.setText(String.format("Person group to use: %s", personGroupName));
+//            textView.setTextColor(Color.BLACK);
+//            textView.setText(String.format("Person group to use: %s", personGroupName));
         }
     }
 
@@ -407,8 +407,8 @@ public class IdentificationActivity extends AppCompatActivity {
 
     // Set whether the buttons are enabled.
     private void setAllButtonsEnabledStatus(boolean isEnabled) {
-        Button selectImageButton = (Button) findViewById(R.id.manage_person_groups);
-        selectImageButton.setEnabled(isEnabled);
+//        Button selectImageButton = (Button) findViewById(R.id.manage_person_groups);
+//        selectImageButton.setEnabled(isEnabled);
 
         Button groupButton = (Button) findViewById(R.id.select_image);
         groupButton.setEnabled(isEnabled);

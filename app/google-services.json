@@ -52,6 +52,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "142834645524-837nv6tu1p7qlqqe7q0qpd0cu14css3f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.microsoft.projectoxford.faceapisample",
+            "certificate_hash": "981964b4769025b16f224ee741fad3045d9bfee2"
+          }
+        },
+        {
           "client_id": "142834645524-2ngac0aoem51plbo2oi94h0d1mjkeboi.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
