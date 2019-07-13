@@ -36,8 +36,8 @@ public class DashboardActivity extends AppCompatActivity {
 
     }
 
-    public void findSimilarFace(View view) {
-
+    public void Routine(View view) {
+        startActivity(new Intent(this, RoutineActivity.class));
     }
     public void Face_Detect_By_Video(View view) {
 

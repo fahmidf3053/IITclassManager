@@ -148,6 +148,7 @@
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
             android:id="@+id/linkCard"
+            android:onClick="Routine"
             android:layout_width="@dimen/card_width"
             android:layout_height="@dimen/card_height"
             android:layout_margin="@dimen/medium_margin">
@@ -166,7 +167,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text=""
+                    android:text="Routine"
                     android:textStyle="bold" />
                 <View
                     android:layout_width="match_parent"
@@ -178,7 +179,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:padding="@dimen/small_padding"
-                    android:text=""
+                    android:text="See your Classes"
                     android:textColor="@android:color/darker_gray" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
